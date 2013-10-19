@@ -3,48 +3,46 @@
 (function($)
 {    
     // Display affect from parent and itself.
-    $.fn.onComputedDisplayChanged = function(callback, delay)
+    $.fn.onVisibleChanged = function(callback, delay)
     {
         this.each(function()
         {
+            delay = delay || 25;
+
             var el = $(this);
             var isVisible = el.is(':visible');
-            delay = delay || 25;
         
-            // Order from top to bottom (include itself).
+            // Retrieve all elements from top to bottom of DOM tree (include itself).
             var nodes = el.add(el.parents());
         
-            nodes.onDisplayChanged(function(e, isNodeVisible)
+            nodes.onElementVisibleChanged(function(e, isElementVisible)
             {
-                if (isVisible === isNodeVisible) return;
-                if (isNodeVisible !== el.is(':visible')) return;
+                if (isVisible === isElementVisible) return;
+                if (isElementVisible !== el.is(':visible')) return;
 
-                isVisible = isNodeVisible;
+                isVisible = isElementVisible;
                     
-                callback.call(this, e, isNodeVisible);
+                callback.call(this, e, isElementVisible);
             }, delay);
         });
 
         return this;
     };
-    $.fn.offComputedDisplayChanged = function()
+    $.fn.offVisibleChanged = function()
     {
-            var el = $(this);
+        var el = $(this);
 
-            this.each(function()
-            {
-                var nodes = el.add(el.parents());
+        this.each(function()
+        {
+            var nodes = el.add(el.parents());
 
-                nodes.offDisplayChanged();
-            });
+            nodes.offElementVisibleChanged();
+        });
     
-            return this;
+        return this;
     };
 
-    // Trigger-based Display detection.
-    // Browser Support
-    // http://caniuse.com/#search=MutationObserver
-    $.fn.onDisplayChanged = function(callback, delay)
+    $.fn.onElementVisibleChanged = function(callback, delay)
     {
         this.each(function()
         {
@@ -80,7 +78,7 @@
         return this;
     };
 
-    $.fn.offDisplayChanged = function()
+    $.fn.offElementVisibleChanged = function()
     {
         this.each(function()
         {

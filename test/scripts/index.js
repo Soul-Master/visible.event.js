@@ -12,7 +12,7 @@
         var label = $('#lVisibility');
 
         label.text(tab.is(':visible'));
-        tab.onComputedDisplayChanged(function (e, isVisible)
+        tab.onVisibleChanged(function (e, isVisible)
         {
             label.text(isVisible);
         });
