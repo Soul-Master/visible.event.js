@@ -1,0 +1,3 @@
+[submodule "test/scripts/attrchange"]
+	path = test/scripts/attrchange
+	url = https://github.com/meetselva/attrchange.git
