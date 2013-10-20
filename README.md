@@ -44,4 +44,4 @@ Example Usage
 
 1. This is a hello world example of [visible.event.js](https://github.com/Soul-Master/visible.event.js) function. This example show how this function normally work.
 
-http://jsbin.com/ETiGIre/2
+http://jsbin.com/ETiGIre/7
