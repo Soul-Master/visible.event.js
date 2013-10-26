@@ -24,7 +24,7 @@ $('[selector]').onVisibleChanged(callbackFn, [delay]);
 ```bash
 $('[selector]').offVisibleChanged();
 ```
-**offVisibleChanged** function use to disable visibility detection on any element. This function will stop mutation observer object that assosiate with this element.
+~~**offVisibleChanged** function use to disable visibility detection on any element. This function will stop mutation observer object that assosiate with this element.~~
 
 Additional Methods
 -------------------------------------
@@ -37,7 +37,7 @@ $('[selector]').onElementVisibleChanged(callbackFn, [delay]);
 ```bash
 $('[selector]').offElementVisibleChanged();
 ```
-**offElementVisibleChanged** function use to disable visibility detection on **single element**.
+~~**offElementVisibleChanged** function use to disable visibility detection on **single element**.~~
 
 Example Usage
 --------------------------------------
@@ -45,3 +45,5 @@ Example Usage
 1. This is a hello world example of [visible.event.js](https://github.com/Soul-Master/visible.event.js) function. This example show how this function normally work.
 
 http://jsbin.com/ETiGIre/7
+
+> disable visibility detection temporary don't work for now because some technical limitation of AttrChange API that doesn't provide the way to access observer.
