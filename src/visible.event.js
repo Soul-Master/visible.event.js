@@ -56,7 +56,7 @@
                 trackValues: true,
                 callback: function(e)
                 {
-                    if (e.attributeName !== 'style') return;
+                    if (e.attributeName !== 'style' && e.attributeName !== 'className') return;
                     if (delay == 0) return callback.call(this, e);
 
                     // Prevent rapid fire event while element is animating.
